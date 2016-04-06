@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: a9c136f9dcfd3954fa0f3fab6260607f
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: BirdHero_0
+    21300002: BirdHero_1
+    21300004: BirdHero_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -58,7 +61,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -52, y: 33.5}
+        - {x: -58, y: 22.5}
+        - {x: -58, y: -30.5}
+        - {x: -48, y: -33.5}
+        - {x: 46, y: -33.5}
+        - {x: 59, y: -18.5}
+        - {x: 59, y: 14.5}
+        - {x: 25, y: 33.5}
     - name: BirdHero_1
       rect:
         serializedVersion: 2
@@ -69,7 +80,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -56, y: 33.5}
+        - {x: -63, y: 32.5}
+        - {x: -63, y: -6.5}
+        - {x: -59, y: -16.5}
+        - {x: -50, y: -33.5}
+        - {x: 52, y: -33.5}
+        - {x: 59, y: -15.5}
+        - {x: 59, y: 9.5}
+        - {x: 37, y: 33.5}
     - name: BirdHero_2
       rect:
         serializedVersion: 2
@@ -80,7 +100,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -53, y: 33.5}
+        - {x: -58, y: 23.5}
+        - {x: -58, y: -31.5}
+        - {x: -50, y: -33.5}
+        - {x: 50, y: -33.5}
+        - {x: 59, y: -21.5}
+        - {x: 59, y: 1.5}
+        - {x: 34, y: 33.5}
     outline: []
   spritePackingTag: 
   userData: 
