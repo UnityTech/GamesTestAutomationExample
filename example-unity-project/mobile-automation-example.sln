@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{5FA8B077-3E28-5202-627B-B03C0ED3E13A}") = "mobile-automation-example", "Assembly-CSharp.csproj", "{4E8F07A6-60DD-37DF-8395-CA69704E5DE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E8F07A6-60DD-37DF-8395-CA69704E5DE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E8F07A6-60DD-37DF-8395-CA69704E5DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E8F07A6-60DD-37DF-8395-CA69704E5DE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E8F07A6-60DD-37DF-8395-CA69704E5DE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
