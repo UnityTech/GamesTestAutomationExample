@@ -12,6 +12,10 @@ public class GameControlScript : MonoBehaviour
 	int score = 0;								//the player's score
 	bool isGameOver = false;					//is the game over?
 
+	void Start()
+	{
+		Debug.Log("Game Started");
+	}
 
 	void Awake()
 	{

@@ -5,7 +5,8 @@
 
 var
   setup = require("./setup-device"),
-  wd = require("wd");
+  wd = require("wd"),
+  LogCatcher = require("./itest-niacin/device_logs/log-catcher.js");
 
 var
   platform = process.env.APPIUM_PLATFORM;
@@ -16,14 +17,16 @@ var waitByLinkOrName = function (text, timeout){
   } else {
     return this.waitForElementByName(text, timeout);
   }
-}
+};
  wd.addPromiseChainMethod('waitByLinkOrName', waitByLinkOrName);
 
-describe("Unity Ads Example test " + platform + " Native", function () {
+describe("Unity example automation tests " + platform + " Native", function () {
   this.timeout(450000);
   var driver;
   var allPassed = true;
-  var logCatcher;
+  var logType = "adbworkaround";
+  var logFilterStr = new RegExp("^.\/" + process.env.APPIUM_APP_ACTIVITY);
+  var logCatcher = new LogCatcher(logType, logFilterStr, driver);
 
   before(function () {
     driver = wd.promiseChainRemote(setup.serverConfig);
@@ -46,20 +49,12 @@ describe("Unity Ads Example test " + platform + " Native", function () {
     }
   });
 
-  context("options", function () {
-    it("displays the button and clicks it", function () {
-      return driver
-        .waitByLinkOrName("?", 25000)
-        .click();
-    })
-    it("displays the developer ID tag", function () {
-      return driver
-        .waitByLinkOrName("Developer ID", 25000);
-    })
-    it("shows button to open info and clicks", function () {
-      return driver
-        .waitByLinkOrName("Start", 25000)
-        .click();
+  context("Main menu", function () {
+    it("Gets the message that game was started", function (done) {
+      logCatcher
+        .waitForMessage("Game Started", 25000, 100, function(entry){
+          console.log("Got message '" + entry.message + "'");
+        });
     });
   });
 });
