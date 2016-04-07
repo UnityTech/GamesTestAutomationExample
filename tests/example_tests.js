@@ -52,8 +52,17 @@ describe("Unity example automation tests " + platform + " Native", function () {
   context("Main menu", function () {
     it("Gets the message that game was started", function (done) {
       logCatcher
-        .waitForMessage("Game Started", 25000, 100, function(entry){
+        .waitForMessage(/Game Started/, 25000, 100, function(entry){
           console.log("Got message '" + entry.message + "'");
+          done();
+        });
+    });
+
+    it("Gets the coordinates for options-button", function (done) {
+      logCatcher
+        .waitForMessage(/coordinates/, 25000, 100, function(entry){
+          console.log("Got message '" + entry.message + "'");
+          done();
         });
     });
   });

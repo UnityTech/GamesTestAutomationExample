@@ -8,6 +8,7 @@ function get_full_path {
 
 # Setup Appium
 app_path='../example-app.apk'
+export APPIUM_APP_ACTIVITY="Unity"
 export APPIUM_APPFILE=${APPIUM_APPFILE:="$(get_full_path "$app_path")"}
 export APPIUM_DEVICE="Local Device"
 export APPIUM_PLATFORM="android"
@@ -45,13 +46,21 @@ else
   export TEST="unity-ads_android_legacy.js"
 fi
 
+# Pipe logcat to file
+echo "Starting logging"
+adb logcat -v time -s "$APPIUM_APP_ACTIVITY" > "logcat.log" &
+adbPid=$!
+
 if [ "$TESTDROID" -eq "1" ]; then
   npm install chai@2.1.2 colors underscore chai-as-promised wd path mkdirp yiewd tail mocha-junit-reporter mocha 2>&1
   ./node_modules/.bin/mocha example_tests.js --reporter mocha-junit-reporter --reporter-options mochaFile=./TEST-all.xml 2>&1
+  export scriptExitStatus=$?
 else
   npm install chai@2.1.2 colors underscore chai-as-promised wd path mkdirp yiewd tail mocha-junit-reporter mocha
   ./node_modules/.bin/mocha example_tests.js
+  export scriptExitStatus=$?
 fi
 
-
+echo "Test stopped with status '$scriptExitStatus'"
+kill $adbPid
 exit $scriptExitStatus

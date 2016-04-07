@@ -45,6 +45,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AutomationHelpers\Scripts\CoordinateLog.cs" />
+     <Compile Include="Assets\AutomationHelpers\Scripts\CoordinateSerializable.cs" />
      <Compile Include="Assets\Example Games\Flappy Bird Style\Scripts\BirdScript.cs" />
      <Compile Include="Assets\Example Games\Flappy Bird Style\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Example Games\Flappy Bird Style\Scripts\ColumnScript.cs" />
