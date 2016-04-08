@@ -72,7 +72,7 @@ function LogCatcher(logType, regexFilter, driver) {
             });
             lg.entries = lg.entries.concat(newEntries);
             cb();
-        });        
+        });
     };
 
 
@@ -90,6 +90,31 @@ function LogCatcher(logType, regexFilter, driver) {
   this.clearMessages = function() {
     this.getLatestMessages(function(){
       this.entries = [];
+    });
+  };
+
+  this.getJSONobjects = function(filterRegex, cb){
+    lg.findEntries(filterRegex, function(matchingEntries){
+      var jsonObjects = matchingEntries.map(function(entry){
+        return parseJsonFromMessage(entry.message);
+      });
+      cb(jsonObjects);
+    });
+  };
+
+  this.getJSONobject = function(filterRegex, objectName, cb){
+    lg.getJSONobjects(filterRegex, function(coordObjects){
+      var matchingButtons = coordObjects.filter(function(object){
+        //console.log("'" + object.name.toLowerCase() + "' == '" + objectName.toLowerCase() + "'");
+        return (object.name.toLowerCase() == objectName.toLowerCase());
+      });
+      console.log("birb?");
+      if(matchingButtons.length === 0){
+        console.log("No matches, returning undefined");
+        cb(undefined);
+      }
+      console.log("We might have a match: " + matchingButtons.length-1);
+      cb(matchingButtons[matchingButtons.length-1]);
     });
   };
 
@@ -164,6 +189,8 @@ function LogCatcher(logType, regexFilter, driver) {
       }
     }
   };
+
+  this.parseJsonFromMessage = parseJsonFromMessage;
 }
 
 module.exports = LogCatcher;

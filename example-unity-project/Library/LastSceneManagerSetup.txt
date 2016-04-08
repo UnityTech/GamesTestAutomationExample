@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/Example Games/Flappy Bird Style/_Scenes/Main.unity
+  isLoaded: 1
+  isActive: 1

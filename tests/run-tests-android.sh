@@ -7,7 +7,7 @@ function get_full_path {
 }
 
 # Setup Appium
-app_path='../example-app.apk'
+app_path='../example-unity-project/example-app.apk'
 export APPIUM_APP_ACTIVITY="Unity"
 export APPIUM_APPFILE=${APPIUM_APPFILE:="$(get_full_path "$app_path")"}
 export APPIUM_DEVICE="Local Device"
