@@ -2,18 +2,13 @@
 using System.Collections;
 
 public class CoordinateLog : MonoBehaviour {
-	public GameObject target;
-
-	void Start() {
-		target = gameObject;
-	}
 
 	string CoordinateToJson(Camera camera){
-		Vector3 screenPos = camera.WorldToScreenPoint(target.transform.position);
+		Vector3 screenPos = camera.WorldToScreenPoint(transform.position);
 		CoordinateSerializable coord = new CoordinateSerializable();
 		coord.x = (int)Mathf.Round(screenPos.x);
 		coord.y = (int)Mathf.Round(screenPos.y);
-		coord.name = target.name;
+		coord.name = name;
 		coord.time = Time.time;
 		return JsonUtility.ToJson (coord);
 	}
@@ -31,5 +26,4 @@ public class CoordinateLog : MonoBehaviour {
 	void update(){
 		CoordinateToLog (Camera.current);
 	}
-
 }
