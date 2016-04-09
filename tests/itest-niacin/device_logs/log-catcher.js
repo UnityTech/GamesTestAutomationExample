@@ -108,12 +108,10 @@ function LogCatcher(logType, regexFilter, driver) {
         //console.log("'" + object.name.toLowerCase() + "' == '" + objectName.toLowerCase() + "'");
         return (object.name.toLowerCase() == objectName.toLowerCase());
       });
-      console.log("birb?");
       if(matchingButtons.length === 0){
         console.log("No matches, returning undefined");
         cb(undefined);
       }
-      console.log("We might have a match: " + matchingButtons.length-1);
       cb(matchingButtons[matchingButtons.length-1]);
     });
   };

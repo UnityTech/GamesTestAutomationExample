@@ -63,7 +63,7 @@ describe("Unity example automation tests " + platform + " Native", function () {
     });
 
     it("waits for items to populate", function(){
-      return driver.sleep(3000)
+      return driver.sleep(3000);
     });
 
     it("gets the element coordinates", function(done){
@@ -87,27 +87,30 @@ describe("Unity example automation tests " + platform + " Native", function () {
 
     it("gets coordinates for start-button", function(done){
       logCatcher.getJSONobject(/Automation-coordinate/, "Start", function(startButton){
-        startButton.name.should.be.equal("Start");
-        startButton.x.should.be.above(0);
-        startButton.y.should.be.above(0);
-        done();
+        try{
+          startButton.name.should.be.equal("Start");
+          startButton.x.should.be.above(0);
+          startButton.y.should.be.above(0);
+          done();
+        } catch(e) {
+          done(e);
+        }
       });
     });
 
-    it.skip("Still sees the bird at original position after 4 seconds", function(done){
+    it("Still sees the bird at original position after 3 seconds", function(done){
       return driver
-        .sleep(4000)
+        .sleep(3000)
         .then(function(){
-          console.log("Looking for bird");
           logCatcher.getJSONobject(/Automation-coordinate/, "Bird", function(birdObj){
-            console.log("Birdobject.name = " + birdObj.name);
-            birdObj.time.should.be.notEqual(birdObject.time);
-            console.log("FU Birb!");
-            birdObj.x.should.be.equal(birdObject.x);
-            console.log("Something is fucky");
-            birdObj.y.should.be.equal(birdObject.y);
-            console.log("god damnit")
-            done();
+            try{
+              birdObj.time.should.be.above(birdObject.time);
+              birdObj.x.should.be.equal(birdObject.x);
+              birdObj.y.should.be.equal(birdObject.y);
+              done();
+            } catch(e) {
+              done(e);
+            }
           });
         });
     });
@@ -127,16 +130,20 @@ describe("Unity example automation tests " + platform + " Native", function () {
       return driver.sleep(3000);
     });
 
-    it.skip("bird should have moved after 4 seconds", function(done){
+    it("gravity pulls the bird downwards", function(done){
       return driver
-        .sleep(4000)
+        .sleep(3000)
         .then(function(){
           logCatcher.getJSONobject(/Automation-coordinate/, "Bird", function(object){
-            object.time.should.notEqual(birdObject.time);
-            object.x.should.notEqual(birdObject.x);
-            object.y.should.notEqual(birdObject.y);
+            try{
+              object.time.should.be.above(birdObject.time);
+              object.y.should.be.below(birdObject.y);
+              done();
+            } catch(e) {
+              done(e);
+            }
           });
-        });
+        })
     });
   });
 });

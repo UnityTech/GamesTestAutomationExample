@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class CoordinateLog : MonoBehaviour {
-	private float lastTimeLogged = 0f; 
-	private float logIntervall = 2.0f;
+	private float lastTimeLogged = -1.0f; 
+	private float logInterval = 2.0f;
 
 	string CoordinateToJson(Camera camera){
 		Vector3 screenPos = camera.WorldToScreenPoint(transform.position);
@@ -28,10 +28,10 @@ public class CoordinateLog : MonoBehaviour {
 	}
 
 	void Update(){
-		if (lastTimeLogged < logIntervall) {
+		if (lastTimeLogged < 0) {
 			return;
 		}
-		if (lastTimeLogged + logIntervall < Time.time) {
+		if (lastTimeLogged + logInterval < Time.time) {
 			CoordinateToLog (Camera.current);
 		}
 	}
