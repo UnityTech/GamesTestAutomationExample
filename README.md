@@ -46,6 +46,7 @@ cd GamesTestAutomationExample/tests
 ```
 
 ### Use in your own project
+![](http://i.imgur.com/Cbos0J9.gif)
 - Download the file `example-unity-project/AutomationHelpers.unitypackage` from this repository and drag to your unity project
 - Drag the `ObjectLogger`-prefab from the folder `Assets/AutomationHelpers/Prefabs` into root of your project
 - Open the `ObjectLogger`-Gameobject in inspector and drag the Gameobject you wish to use in your test in appropriate fields
