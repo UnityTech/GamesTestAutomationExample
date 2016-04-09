@@ -25,3 +25,4 @@ cd GamesTestAutomationExample/tests
 - Write better docs with screenshots
 - More examples
 - Other methods of testing
+- Explain what one can do with this project
