@@ -57,3 +57,4 @@ cd GamesTestAutomationExample/tests
 - More examples
 - Other methods of testing
 - Explain what one can do with this project
+- Cloud based testing (testdroid) example
