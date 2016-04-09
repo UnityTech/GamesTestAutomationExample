@@ -26,7 +26,7 @@ The easiest way to communicate information from the game to the tests scripts is
 Image recognition can be made much more robust for this. For a faster implementation consider using [QR-codes](https://en.wikipedia.org/wiki/QR_code), there are good, fast QR-code reading libraries which allows you to quickly find if your scene/sprite/object was rendered correctly and visible for the player. Please keep in mind that QR-codes are designed with error correction which enables it to be read even with only a part of the QR-code visible.
 TODO: Examples and libs with QR-codes
 
-### Problems #3 Finding UI-elements and Gameobjects on screen.
+### Problem #3 Finding UI-elements and Gameobjects on screen.
 For native UI-elemnents of both Android and iOS this is solved by the platform and you can use Appium to find elements on screen. For games this gets more difficult as the platform cannot help you find the elements. 
 A solution which will work for many cases (especially menus and 2D games) is to instument the game to write positions of the elements/objects into the device log. Once again using a standard format such as JSON is recommended. 
 
