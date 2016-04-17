@@ -53,6 +53,14 @@ cd GamesTestAutomationExample/tests
   - `Logged Objects`-fields should be populated with typical Gameobjects
   - `Ui menu Object`-field can be populated with a UI-object (unity 5+)
 
+## Contributing to project
+
+### Build .unityproject from command line
+
+Example of building from command line (Mac - you might have to change Unity path). Executed from root folder of this repo.
+
+`/Applications/Unity\ 5.3.4f1/Unity.app/Contents/MacOS/Unity -projectPath $(pwd)/example-unity-project -exportPackage Assets/AutomationHelpers AutomationHelpers.unitypackage -batchmode -quit`
+
 ## TODO: 
 - Write better docs with screenshots
 - More examples
