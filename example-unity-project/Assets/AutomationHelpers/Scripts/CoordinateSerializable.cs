@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-//[Serializable]
 public class CoordinateSerializable
 {
 	public string name;
