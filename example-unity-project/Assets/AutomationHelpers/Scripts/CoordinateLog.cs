@@ -23,6 +23,9 @@ public class CoordinateLog : MonoBehaviour
 
 	private void CoordinateToLog (Camera camera)
 	{
+		if (camera == null)
+			return;
+
 		string coordinate = CoordinateToJson (camera);
 		Debug.Log ("Automation-coordinate: " + coordinate);
 		lastTimeLogged = Time.time;
