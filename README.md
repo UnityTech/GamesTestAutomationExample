@@ -1,5 +1,5 @@
 # GamesTestAutomationExample
-Examples and libraries for (Unity3d) mobile game automation testing.
+Examples and libraries for (Unity3d) mobile game automation testing. This was started as a project for a hack day but the information and unity packages here might be useful for real game projects.
 
 ## Purpose
 Mobile game automation testing is tricky, the purpose of this project is to provide game developers and QA personel with ideas, examples and libraries which can aid in setting up test automation for a game project.
@@ -66,4 +66,5 @@ Example of building from command line (Mac - you might have to change Unity path
 - More examples
 - Other methods of testing
 - Explain what one can do with this project
-- Cloud based testing (testdroid) example
+- Cloud based testing example
+- Python version of test scripts
